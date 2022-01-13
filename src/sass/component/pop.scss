@@ -1,0 +1,193 @@
+@import "./../engine.scss";
+
+$closeSize: 2;
+
+.pop {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  box-sizing: border-box;
+  @include flex(row, wrap, center, center);
+  @include size(4rem, 4rem);
+  transition: 0.5s;
+  cursor: pointer;
+  span {
+    @include flex(row, wrap, center, center);
+    @include size(100%, 100%);
+    margin: auto;
+    border-radius: 2rem;
+    border: 5px solid white;
+    box-shadow: 0 0 5px 1px rgba(60, 60, 60, 0.7);
+    background-color: rgb(213, 114, 114);
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+
+    .what {
+      font-size: 2rem;
+      margin: 0%;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.pop_big {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 2rem;
+  width: 0;
+  height: 0;
+  border-radius: 2rem;
+  background-color: rgba(0, 70, 175, 0.7);
+  transition: 0.5s;
+  @include flex(row, wrap, center, center);
+  background-color: transparent;
+
+  .dev_info {
+    position: relative;
+    @include size(50%, 50%);
+    padding: 3rem;
+    opacity: 0;
+    background-color: burlywood;
+    animation-name: show;
+    animation-delay: 0.8;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+  }
+  .close_modal {
+    position: absolute;
+    top: $closeSize / -2 + rem;
+    right: $closeSize / -2 + rem;
+    @include size($closeSize + rem, $closeSize + rem);
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    pointer-events: all;
+    cursor: pointer;
+    content: "";
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.5) rotate(180deg);
+    }
+
+    &:before,
+    &:after {
+      height: 3px;
+      width: $closeSize * 0.5 + rem;
+      background-color: black;
+      position: absolute;
+      content: "";
+      z-index: 600;
+      transform-origin: center right;
+    }
+    &:after {
+      transform: rotate(315deg);
+      top: 9px;
+      left: 6px;
+    }
+    &:before {
+      transform: rotate(-135deg);
+      top: 9px;
+      right: 21px;
+    }
+  }
+}
+
+.anime {
+  animation-name: anim;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+.anime-reverse {
+  animation-name: anim-reverse;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes anim {
+  0% {
+    @include size(4rem, 4rem);
+    left: 2rem;
+    border-radius: 2rem;
+    background-color: rgb(213, 114, 114);
+    border: 5px solid white;
+  }
+  50% {
+    @include size(4rem, 100%);
+    left: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(74, 104, 186, 0.7);
+    border: 5px solid white;
+  }
+
+  100% {
+    @include size(100%, 100%);
+    left: 0;
+    border-radius: 0;
+    background-color: rgba(74, 104, 186, 0.7);
+    border: 0px solid white;
+  }
+}
+
+@keyframes anim-reverse {
+  0% {
+    @include size(100%, 100%);
+    left: 0;
+    border-radius: 0;
+    background-color: rgba(74, 104, 186, 1);
+    border: 0px solid white;
+  }
+
+  50% {
+    @include size(4rem, 90%);
+    left: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(74, 104, 186, 1);
+    border: 3px solid white;
+  }
+
+  100% {
+    @include size(4rem, 4rem);
+    left: 2rem;
+    bottom: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(213, 114, 114, 1);
+    border: 5px solid white;
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

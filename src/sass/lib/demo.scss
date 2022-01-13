@@ -1,0 +1,82 @@
+@import "./../engine.scss";
+
+$colorText: rgb(70, 70, 70);
+
+main {
+  @include size(100%, auto);
+  background-color: chocolate;
+
+  @include max-width(1439) {
+    align-self: stretch;
+    background-color: rgb(237, 100, 159);
+
+    @include flex(column, wrap, flex-start, center);
+    padding: 3rem 1rem 45rem 1rem;
+  }
+
+  @include min-width(1440) {
+    @include flex(column, wrap, center, center);
+    height: auto;
+    padding: 3rem;
+    width: clamp(50%, 50%, 100%);
+    background-color: rgb(53, 187, 147);
+    margin: auto;
+    border-radius: 10px;
+  }
+}
+
+.demo {
+  width: 100%;
+  HEADER.change_picker {
+    @include flex(column, wrap, center, center);
+    width: 100%;
+  }
+
+  &_input {
+    @include flex(row, wrap, flex-start, center);
+    width: 100%;
+    margin: 1rem 0 1rem 0;
+
+    .custom_input {
+      margin: 1rem 2rem 0 0;
+      input {
+        width: 150px;
+        text-align: center;
+      }
+    }
+  }
+
+  &_picker_list {
+    margin: 1rem 0;
+    @include min-width(1440) {
+      @include flex(row, wrap, space-between, center);
+      padding: 1rem 0;
+      .picker_list {
+        width: 43%;
+      }
+    }
+  }
+}
+
+.custom_input,
+.container_dataPicker_by_raficraft {
+  INPUT {
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid rgb(182, 182, 182);
+  }
+
+  LABEL {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+.container_dataPicker_by_raficraft {
+  margin: 1.5rem 0;
+}
+
+.date_picker_by_raficraft {
+  top: -1rem;
+}
