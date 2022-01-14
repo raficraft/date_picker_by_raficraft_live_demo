@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark, atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import PopContent from "./PopContent";
 
 function Pop() {
   console.log("render");
@@ -52,14 +51,8 @@ function Pop() {
                 }}
                 data-close="true"
               ></span>
-              <h1>Date picker by Raficraft</h1>
-              <SyntaxHighlighter
-                language="javascript"
-                style={atomDark}
-                useInlineStyles="false"
-              >
-                {codeString}
-              </SyntaxHighlighter>
+
+              <PopContent></PopContent>
             </section>
           </>
         )

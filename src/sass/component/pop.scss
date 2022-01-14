@@ -48,14 +48,22 @@ $closeSize: 2;
 
   .dev_info {
     position: relative;
-    @include size(50%, 50%);
+    width: 50%;
+    max-height: 80%;
     padding: 3rem;
     opacity: 0;
-    background-color: burlywood;
+    background-color: rgb(255, 255, 255);
     animation-name: show;
     animation-delay: 0.8;
     animation-fill-mode: both;
     animation-duration: 0.5s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+
+    a {
+      font-weight: bold;
+    }
   }
   .close_modal {
     position: absolute;
