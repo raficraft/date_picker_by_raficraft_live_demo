@@ -171,9 +171,10 @@ requrired="true",
           <tbody>
             ...Contains the days of the month 
             <tr>
+              ...All days
               <td class="current" data-fulldate="14-01-22" data-year="2022" 
                   data-month="enero">14</td>
-              OR
+              ...OR current Days
               <td class="currentDay" data-fulldate="14-01-22" data-year="2022" 
                   data-month="enero">14</td>
               </tr>
