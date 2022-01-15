@@ -38,7 +38,7 @@ ReactDOM.render(
         alt="Soft skill profil"
       ></a>
       <a
-        href="https://www.npmjs.com/package/guides_js_by_raficraft"
+        href="https://www.npmjs.com/package/datepicker_by_raficraft"
         target="_blank"
         alt="Package NPM"
       ></a>
