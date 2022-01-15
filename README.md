@@ -49,15 +49,25 @@ import { DatePicker } from "datepicker_by_raficraft";
 
 ```javascript
 
+    //In a simple way
+
+    <DatePicker></DatePicker>
+
+    //Or whit props , all pros are optional
+
     <DatePicker
-        className="custom_input"
-        start={date.start}
+        start={date.start} 
         end={date.end}
         language="es"
         label="Espagnol picker"
         forHtml="es_picker"
+        autocomplete="false"
+        readonly="null"
+        required="true"
         key="es"  //If you use, multiple picker. Define a unique key identifier
     ></DatePicker>
+
+    //You can launch the 
 
 ```
 <br>
@@ -79,28 +89,36 @@ The different props that you can pass in your component
 
 //Default Value 
 
-    // [label] Optional, if you define it, a label will be associated with the input of the date picker
+    // [ label ] Optional, if you define it, a label will be associated with the input of the date picker
     label = "date picker",  
 
-    // [forHtml] Add a "for" attribute in the label and an "ID" attribute in the input. If no label, only the
+    // [ forHtml ] Add a "for" attribute in the label and an "ID" attribute in the input. If no label, only the
     // ID will be added. Indispensable if you have several date pickers on the same page. ^^
     forHtml = "datePicker", 
 
-    // [language] Defines the date format and language
+    // [ language ] Defines the date format and language
     language = "gb",
 
-    // [start || end ]  First and last year of the calendar.
+    // [ start || end ]  First and last year of the calendar.
 
     start = new Date().getFullYear() - 50,
     end = new Date().getFullYear() + 50,
 
-    // [autocomplete] Disable autocompletion
-    autocomplete = "off",
+    // [ autocomplete ] Disable autocompletion. For enabled change the paramters to "on"
+    autocomplete = "off",  
+
+    // [ readonly ] Prevent the user from modifying the field manually
+    readonly="null", 
+
+    // [ required ] Make the field mandatory for the validation of your form. 
+    // For disabled change the paramter to false
+    requrired="true",
 
 ```
 <br>
 
 ***
+
 
 ## Change style
 
@@ -109,9 +127,15 @@ You can change the styles of the picker by overriding the classes of the latter.
 
 ```HTML
 <div class="container_dataPicker_by_raficraft">
+
     <label forhtml="es_picker">Espagnol picker</label>
     <input type="text" class="fakeInput" placeholder="dd-mm-yy" name="es_picker" id="es_picker" 
             data-format="date" autocomplete="off">
+
+    <span class="error_message_container">
+        <p class="error_message"></p>
+    </span>
+
     <div class="carousel">
         <header class="head">
             ...Contains the navigation button, the select button and the home button
@@ -152,6 +176,22 @@ table{
 // If you do this then the background color of the picker will be red.
 
 ```
+<br>
+
+***
+
+## Manage Error 
+
+```html
+
+<span class="error_message_container">
+    <p class="error_message"></p>
+</span>
+```
+
+<br>
+
+***
 
 ## Author
 
@@ -162,3 +202,37 @@ Hi, I am a front-end developer specializing in react.js and javascript. What I l
 [Linkedin profil](https://www.linkedin.com/in/raphael-parodi-a942ab1b0/)
 
 [Github repository](https://github.com/raficraft)
+
+<br>
+
+***
+
+## My other package
+
+### Guides.js
+
+
+Guide.js is the first tool in a series of four. This will allow the front-end developer to improve their working comfort and productivity.
+
+Guide.js allows you to insert guides to change their thickness, color and position in order to easily align the elements of your page. This feature is directly inspired by the one that can be found in Photoshop. ^^
+
+The project is completely made from scratch and has no dependencies. And it will be the same for the next modules.
+
+[NPM](https://www.npmjs.com/package/guides_js_by_raficraft)
+
+[Live demo](https://flamboyant-saha-06f6cd.netlify.app/)
+
+[Github repository](https://github.com/raficraft/guides_standAlone)
+
+<br>
+
+***
+
+## Patch Notes
+
+
+### 15/01/2022
+
+-  Add new props "required"
+-  Add new props "readonly"
+

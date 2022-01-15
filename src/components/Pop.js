@@ -43,15 +43,14 @@ function Pop() {
       ) : (
         isContentModal && (
           <>
+            <span
+              className="close_modal"
+              onClick={(e) => {
+                handleClick(e);
+              }}
+              data-close="true"
+            ></span>
             <section className="dev_info">
-              <span
-                className="close_modal"
-                onClick={(e) => {
-                  handleClick(e);
-                }}
-                data-close="true"
-              ></span>
-
               <PopContent></PopContent>
             </section>
           </>

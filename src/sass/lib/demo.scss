@@ -4,11 +4,13 @@ $colorText: rgb(70, 70, 70);
 
 main {
   @include size(100%, auto);
-  background-color: chocolate;
+  box-shadow: 0 0 5px 1px rgba(60, 60, 60, 0.7);
+  background-color: rgb(218, 218, 218);
+
+  height: fit-content;
 
   @include max-width(1439) {
     align-self: stretch;
-    background-color: rgb(237, 100, 159);
 
     @include flex(column, wrap, flex-start, center);
     padding: 3rem 1rem 45rem 1rem;
@@ -19,7 +21,6 @@ main {
     height: auto;
     padding: 3rem;
     width: clamp(50%, 50%, 100%);
-    background-color: rgb(53, 187, 147);
     margin: auto;
     border-radius: 10px;
   }
@@ -69,7 +70,7 @@ main {
   LABEL {
     margin: 0 0 1rem 0;
     text-align: center;
-    font-weight: 500;
+    font-weight: 900;
   }
 }
 

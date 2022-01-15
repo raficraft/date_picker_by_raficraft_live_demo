@@ -46,10 +46,14 @@ $closeSize: 2;
   @include flex(row, wrap, center, center);
   background-color: transparent;
 
+  @include max-width(1439) {
+    padding: 0.5rem;
+  }
+
   .dev_info {
     position: relative;
     width: 50%;
-    max-height: 80%;
+    max-height: 86%;
     padding: 3rem;
     opacity: 0;
     background-color: rgb(255, 255, 255);
@@ -64,11 +68,22 @@ $closeSize: 2;
     a {
       font-weight: bold;
     }
+    @include max-width(767) {
+      padding: 0.5rem;
+      pre {
+        font-size: 0.75rem;
+        overflow-x: scroll;
+      }
+    }
+    @include max-width(1439) {
+      width: 100%;
+      padding: 0 1rem;
+    }
   }
   .close_modal {
     position: absolute;
-    top: $closeSize / -2 + rem;
-    right: $closeSize / -2 + rem;
+    top: 2rem;
+    right: 2rem;
     @include size($closeSize + rem, $closeSize + rem);
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
@@ -76,6 +91,12 @@ $closeSize: 2;
     cursor: pointer;
     content: "";
     transition: 0.5s;
+
+    @include max-width(1439) {
+      padding: 0.5rem;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
 
     &:hover {
       transform: scale(1.5) rotate(180deg);

@@ -4,7 +4,7 @@ import { dark, atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function PopContent() {
   return (
-    <>
+    <div className="readme">
       <h1 id="date-picker-by-raficraft-live-demo">
         Date picker by raficraft (Live demo)
       </h1>
@@ -74,6 +74,9 @@ function PopContent() {
   language="es"
   label="Espagnol picker"
   forHtml="es_picker"
+  autocomplete="false"
+  readonly="null"
+  required="true"
   key="es"  //If you use, multiple picker. Define a unique key identifier
 ></DatePicker>
         
@@ -119,8 +122,15 @@ language = "gb",
 start = new Date().getFullYear() - 50,
 end = new Date().getFullYear() + 50,
 
-// [autocomplete] Disable autocompletion
-autocomplete = "off",
+// [ autocomplete ] Disable autocompletion. For enabled change the paramters to "on"
+autocomplete = "off",  
+
+// [ readonly ] Prevent the user from modifying the field manually
+readonly="null", 
+
+// [ required ] Make the field mandatory for the validation of your form. 
+// For disabled change the paramter to false
+requrired="true",
         
         `}
       </SyntaxHighlighter>
@@ -140,9 +150,15 @@ autocomplete = "off",
         {`
          
 <div class="container_dataPicker_by_raficraft">
+
   <label forhtml="es_picker">Espagnol picker</label>
   <input type="text" class="fakeInput" placeholder="dd-mm-yy" name="es_picker"
           id="es_picker" data-format="date" autocomplete="off">
+
+  <span class="error_message_container">
+    <p class="error_message"></p>
+  </span>
+
   <div class="carousel">
     <header class="head">
         ...Contains the navigation button, the select button and the home button
@@ -256,7 +272,7 @@ table{
           Github repository
         </a>
       </p>
-    </>
+    </div>
   );
 }
 
