@@ -39,12 +39,12 @@ function PopContent() {
       </a>
       <h2 id="supported-language">Supported language</h2>
       <ul>
-        <li>English (EN)</li>
-        <li>English (US)</li>
-        <li>French (EN)</li>
-        <li>German (DE)</li>
-        <li>Spanish (SP)</li>
-        <li>Italian (IT)</li>
+        <li>English (gb)</li>
+        <li>English (us)</li>
+        <li>French (fr)</li>
+        <li>German (de)</li>
+        <li>Spanish (sp)</li>
+        <li>Italian (it)</li>
       </ul>
       <br />
       <p>Other languages ​​will be added. Stay tuned. ^^</p>
@@ -58,9 +58,7 @@ function PopContent() {
         {`import {DatePicker} from "datepicker_by_raficraft";`}
       </SyntaxHighlighter>
       <br />
-
       <h2>Use</h2>
-
       <SyntaxHighlighter
         language="javascript"
         style={atomDark}
@@ -82,11 +80,8 @@ function PopContent() {
         
         `}
       </SyntaxHighlighter>
-
       <br />
-
       <h2 id="settings">Settings</h2>
-
       <p>The different props that you can pass in your component</p>
       <p>
         <strong>
@@ -97,7 +92,6 @@ function PopContent() {
         </strong>
       </p>
       <br />
-
       <SyntaxHighlighter
         language="javascript"
         style={atomDark}
@@ -134,14 +128,12 @@ requrired="true",
         
         `}
       </SyntaxHighlighter>
-
+      <br />
       <h2>Change style</h2>
-
       <p>
         You can change the styles of the picker by overriding the classes of the
         latter. HTML structure of the picker.
       </p>
-
       <SyntaxHighlighter
         language="html"
         style={atomDark}
@@ -191,7 +183,6 @@ requrired="true",
         However, be careful not to directly overload the following tags in your
         css without adding a parent class or a specific class.
       </p>
-
       <SyntaxHighlighter
         language="css"
         style={atomDark}
@@ -207,6 +198,20 @@ table{
 // If you do this then the background color of the picker will be red.
         `}
       </SyntaxHighlighter>
+      <br />
+      <h2>Manage Error</h2>
+      For error handling, you can directly target this dom element to manage its
+      display
+      <SyntaxHighlighter
+        language="html"
+        style={atomDark}
+        useInlineStyles="false"
+      >
+        {`<span class="error_message_container">
+  <p class="error_message"></p>
+</span>`}
+      </SyntaxHighlighter>
+      <br />
       <h2 id="author">Author</h2>
       <p>
         Hi, I am a front-end developer specializing in react.js and javascript.
@@ -235,7 +240,7 @@ table{
           Github
         </a>
       </p>
-
+      <br />
       <h2 id="my-other-package">My other package</h2>
       <h3 id="guidesjs">Guides.js</h3>
       <p>

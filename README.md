@@ -14,12 +14,12 @@ A multilingual date picker from scratch for react.
 
 ## Supported language
 
--  English (EN)
--  English (US)
--  French  (EN)
--  German  (DE)
--  Spanish (SP)
--  Italian (IT)
+-  English (gb)
+-  English (us)
+-  French  (fr)
+-  German  (de)
+-  Spanish (sp)
+-  Italian (it)
 
 Other languages ​​will be added. Stay tuned. ^^
  
@@ -53,18 +53,19 @@ import { DatePicker } from "datepicker_by_raficraft";
 
     <DatePicker></DatePicker>
 
-    //Or whit props , all pros are optional
+    // Or whit props , all pros are optional
+    // Supported language [fr, gb, us, it, de, es]
 
     <DatePicker
         start={date.start} 
-        end={date.end}
+        end={date.end}        
         language="es"
         label="Espagnol picker"
         forHtml="es_picker"
+        key="es"  // If you use, multiple picker. Define a unique key identifier
         autocomplete="false"
         readonly="null"
         required="true"
-        key="es"  //If you use, multiple picker. Define a unique key identifier
     ></DatePicker>
 
     //You can launch the 
@@ -97,6 +98,7 @@ The different props that you can pass in your component
     forHtml = "datePicker", 
 
     // [ language ] Defines the date format and language
+    // Supported language [fr, gb, us, it, de, es]
     language = "gb",
 
     // [ start || end ]  First and last year of the calendar.
@@ -127,15 +129,9 @@ You can change the styles of the picker by overriding the classes of the latter.
 
 ```HTML
 <div class="container_dataPicker_by_raficraft">
-
     <label forhtml="es_picker">Espagnol picker</label>
     <input type="text" class="fakeInput" placeholder="dd-mm-yy" name="es_picker" id="es_picker" 
             data-format="date" autocomplete="off">
-
-    <span class="error_message_container">
-        <p class="error_message"></p>
-    </span>
-
     <div class="carousel">
         <header class="head">
             ...Contains the navigation button, the select button and the home button
@@ -167,20 +163,22 @@ You can change the styles of the picker by overriding the classes of the latter.
 
 
 ```CSS
-// DOn't do That 
+// Don't do That 
 
 table{
     background-color : red;
 }
 
-// If you do this then the background color of the picker will be red.
+//If you do this then the background color of the picker will be red.
 
 ```
 <br>
 
 ***
 
-## Manage Error 
+## Manage Error
+
+For error handling, you can directly target this dom element to manage its display
 
 ```html
 
@@ -207,27 +205,6 @@ Hi, I am a front-end developer specializing in react.js and javascript. What I l
 
 ***
 
-## My other package
-
-### Guides.js
-
-
-Guide.js is the first tool in a series of four. This will allow the front-end developer to improve their working comfort and productivity.
-
-Guide.js allows you to insert guides to change their thickness, color and position in order to easily align the elements of your page. This feature is directly inspired by the one that can be found in Photoshop. ^^
-
-The project is completely made from scratch and has no dependencies. And it will be the same for the next modules.
-
-[NPM](https://www.npmjs.com/package/guides_js_by_raficraft)
-
-[Live demo](https://flamboyant-saha-06f6cd.netlify.app/)
-
-[Github repository](https://github.com/raficraft/guides_standAlone)
-
-<br>
-
-***
-
 ## Patch Notes
 
 
@@ -235,4 +212,3 @@ The project is completely made from scratch and has no dependencies. And it will
 
 -  Add new props "required"
 -  Add new props "readonly"
-

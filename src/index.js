@@ -28,7 +28,7 @@ ReactDOM.render(
         alt="My profil in Notion"
       ></a>
       <a
-        href="https://github.com/raficraft/GUIDES_JS"
+        href="https://github.com/raficraft/date_picker_by_raficraft_live_demo"
         target="_blank"
         alt="Github repositories of this project"
       ></a>
